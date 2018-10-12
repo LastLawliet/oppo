@@ -2,30 +2,54 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<style type="text/css">
-			div{
-				position: relative;
-				margin: 100px auto;
-				width: 200px;
-				height: 150px;
-				border: 1px solid black;
-				overflow: hidden;
-			}
-			img{
-				margin: 10px;
-				width:180px;
-				height: 130px;
-			}
-		</style>
+		<title>www.oppo.com</title>
+		<link rel="icon" href="img/pika.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/index.css" />
 	</head>
 	<body>
-		<div>
-			<img src="img/img2.jpg" />
-		</div>
-		<br/>
-		<div>
-			<img src="img/img3.jpg" />
-		</div>
+		<header>
+			<nav>
+				<h1><a href="#"><i class="iconfont">&#xe82d;</i></a></h1>
+				<ul>
+					<li class="first">
+						<a href="#">手机</a>
+						<aside id="phone">
+							
+						</aside>
+					</li>
+					<li><a href="#">品牌</a></li>
+					<li><a href="#">商城</a></li>
+					<li><a href="#">体验店</a></li>
+					<li><a href="#">服务</a></li>
+					<li><a href="#">社区</a></li>
+					<li><a href="#">ColorOS</a></li>
+					<li><a href="#">云服务</a></li>
+				</ul>
+				<section>
+					<i class="iconfont">&#xe652;</i>
+					<aside>
+						<ul>
+							<li><a href=""><b class="iconfont"><span>购物车</span></b></a></li>
+							<li><a href=""><b class="iconfont"><span>我的订单</span></b></a></li>
+							<li><a href=""><b class="iconfont"><span>回收单</span></b></a></li>
+							<li><a href=""><b class="iconfont"><span>个人中心</span></b></a></li>
+							<li><a href=""><b class="iconfont"><span>登录</span></b></a></li>
+						</ul>
+					</aside>
+				</section>
+			</nav>
+		</header>
+		<div id="banner"></div>
 	</body>
 </html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		let s1 = new Slider($("#banner"),1440,600,["img/banner1.jpg","img/banner2.jpg","img/banner3.jpg","img/banner4.jpg","img/banner5.jpg","img/banner6.jpg"],
+				10,"#ccc","red",
+				true,-1,1500);
+		
+	}
+</script>

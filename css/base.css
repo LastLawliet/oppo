@@ -1,0 +1,67 @@
+*{
+	padding:0;
+	margin:0;
+}
+
+html {
+    font-size: 86.66667px;
+}
+
+@media (max-width: 1440px){
+	html {
+	    font-size: 15px;
+	}
+}
+
+body {
+    font-family: "方正悠黑 508R W", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    
+    background-color: transparent;
+}
+b{font-weight: 100;}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/iconfont.woff') format('woff'),
+  url('../font/iconfont.ttf') format('truetype'),
+  url('../font/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont{
+  font-family:"iconfont" !important;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul{list-style:none;}
+
+body{background:skyblue;overflow-x: hidden;}
+
+/*=================header===================*/
+header{position:absolute;width:100%;z-index:5;}
+header nav{position:relative;margin:0 30px;height:60px;text-align: center;}
+
+header nav h1{position:absolute;left:0;top:0;width:146px;height:100%;text-align: center;padding-top:3px;}
+header nav h1 a{display:flex;height:100%;box-sizing:border-box;}
+header nav h1 a img{margin: auto;vertical-align: top;height: 19px;width:115px;}
+header nav h1 a i{font-size:100px;color:#fff;line-height: 60px;padding:0 20px;}
+header nav ul{height:60px;display: inline-block;overflow:hidden;}
+header nav ul li{float:left;height:100%;text-align:center;vertical-align: middle;box-sizing:border-box;}
+header nav ul li a{transition: 1s;color:#fff;line-height: 60px;display:inline-block;height:100%;margin:0 15px;padding:0 10px;z-index:5;}
+header nav ul li:hover a{color:rgba(255,255,255,.7);}
+
+
+header nav section{position:absolute;right:0;top:0;height:100%;}
+header nav section i{display:inline-block;font-size:25px;padding:0 10px;line-height: 60px;color:#fff;vertical-align: middle;}
+header nav section aside{position:absolute;top:100px;width:200px;background: red;}
