@@ -44,24 +44,30 @@ b{font-weight: 100;}
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+
 ul{list-style:none;}
 
-body{background:skyblue;overflow-x: hidden;}
+body{overflow-x: hidden;}
 
 /*=================header===================*/
 header{position:absolute;width:100%;z-index:5;}
-header nav{position:relative;margin:0 30px;height:60px;text-align: center;}
+header>nav{position:relative;margin:0 30px;height:60px;text-align: center;}
 
-header nav h1{position:absolute;left:0;top:0;width:146px;height:100%;text-align: center;padding-top:3px;}
-header nav h1 a{display:flex;height:100%;box-sizing:border-box;}
-header nav h1 a img{margin: auto;vertical-align: top;height: 19px;width:115px;}
-header nav h1 a i{font-size:100px;color:#fff;line-height: 60px;padding:0 20px;}
-header nav ul{height:60px;display: inline-block;overflow:hidden;}
-header nav ul li{float:left;height:100%;text-align:center;vertical-align: middle;box-sizing:border-box;}
-header nav ul li a{transition: 1s;color:#fff;line-height: 60px;display:inline-block;height:100%;margin:0 15px;padding:0 10px;z-index:5;}
-header nav ul li:hover a{color:rgba(255,255,255,.7);}
+header>nav h1{position:absolute;left:0;top:0;width:146px;height:100%;text-align: center;padding-top:3px;}
+header>nav h1 a{display:flex;height:100%;box-sizing:border-box;}
+header>nav h1 a svg{font-size:106px;height:17px;color:#fff;line-height: 6px;padding:0 20px;margin: -25px 0;}
+header>nav ul{height:60px;display: inline-block;overflow:hidden;}
+header>nav ul li{float:left;height:100%;text-align:center;vertical-align: middle;box-sizing:border-box;}
+header>nav ul li a{transition: 1s;color:#fff;line-height: 60px;display:inline-block;height:100%;margin:0 15px;padding:0 10px;z-index:5;}
+header>nav ul li:hover a{color:rgba(255,255,255,.7);}
 
 
-header nav section{position:absolute;right:0;top:0;height:100%;}
-header nav section i{display:inline-block;font-size:25px;padding:0 10px;line-height: 60px;color:#fff;vertical-align: middle;}
-header nav section aside{position:absolute;top:100px;width:200px;background: red;}
+header>nav section{position:absolute;right:0;top:0;height:100%;}
+header>nav section i{display:inline-block;font-size:25px;padding:0 10px;line-height: 60px;color:#fff;vertical-align: middle;}
+header>nav section aside{position:absolute;top:100px;width:200px;background: red;}
