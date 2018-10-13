@@ -1,23 +1,18 @@
-*{
-	padding:0;
-	margin:0;
+body,h1,h2,h3,h4,h5,h6,p,a,img,form,input,select,figure,figcaption,ul,li,ol,dl,dt,dd,table,tr,th,td,thead,tbody,tfoot{
+	margin: 0;
+	padding: 0;
 }
 
 html {
     font-size: 86.66667px;
 }
 
-@media (max-width: 1440px){
-	html {
-	    font-size: 15px;
-	}
-}
-
 body {
     font-family: "方正悠黑 508R W", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial;
 }
+ul,ol{list-style-type: none;}
 
-a {
+a{
     color: #333;
     text-decoration: none;
     cursor: pointer;
@@ -25,8 +20,16 @@ a {
     
     background-color: transparent;
 }
+
+input{outline: none;}
 b{font-weight: 100;}
 
+
+@media (max-width: 1440px){
+	html{
+	    font-size: 16px;
+	}
+}
 @font-face {
   font-family: 'iconfont';
   src: url('../font/iconfont.eot');
@@ -51,7 +54,6 @@ b{font-weight: 100;}
    overflow: hidden;
 }
 
-ul{list-style:none;}
 
 body{overflow-x: hidden;}
 
@@ -62,12 +64,20 @@ header>nav{position:relative;margin:0 30px;height:60px;text-align: center;}
 header>nav h1{position:absolute;left:0;top:0;width:146px;height:100%;text-align: center;padding-top:3px;}
 header>nav h1 a{display:flex;height:100%;box-sizing:border-box;}
 header>nav h1 a svg{font-size:106px;height:17px;color:#fff;line-height: 6px;padding:0 20px;margin: -25px 0;}
-header>nav ul{height:60px;display: inline-block;overflow:hidden;}
-header>nav ul li{float:left;height:100%;text-align:center;vertical-align: middle;box-sizing:border-box;}
-header>nav ul li a{transition: 1s;color:#fff;line-height: 60px;display:inline-block;height:100%;margin:0 15px;padding:0 10px;z-index:5;}
-header>nav ul li:hover a{color:rgba(255,255,255,.7);}
+header>nav>ul{height:60px;display: inline-block;overflow:hidden;}
+header>nav>ul li{float:left;height:100%;text-align:center;vertical-align: middle;box-sizing:border-box;}
+header>nav>ul li a{transition: 0.5s;color:#fff;line-height: 60px;display:inline-block;height:100%;margin:0 15px;padding:0 10px;z-index:5;}
+header>nav>ul li:hover a{color:rgba(255,255,255,0.7);}
+
+/*================手机==================*/
 
 
-header>nav section{position:absolute;right:0;top:0;height:100%;}
-header>nav section i{display:inline-block;font-size:25px;padding:0 10px;line-height: 60px;color:#fff;vertical-align: middle;}
-header>nav section aside{position:absolute;top:100px;width:200px;background: red;}
+/*==================购物袋i==================*/
+header>nav>section{position:absolute;right:0;top:0;height:100%;}
+header>nav>section i{display:inline-block;font-size:25px;padding:0 10px;line-height: 60px;color:#fff;vertical-align: middle;}
+header>nav>section aside{position:absolute;right:-23px;top:65px;background:white;z-index:3;}
+header>nav>section aside em{position:absolute;right:35px;top:-8px;
+	width:20px;height:20px;transform:rotate(45deg);background:white;}
+header>nav>section aside ul{width:270px;padding :10px 0;text-align: left;}
+header>nav>section aside ul li{margin: 0 28px;padding:18px 0;border-bottom:1px rgba(0,0,0,0.082) solid;}
+header>nav>section aside ul li a{font-size:15px;}

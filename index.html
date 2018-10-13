@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>www.oppo.com</title>
+		<title>oppo商城</title>
 		<link rel="icon" href="img/pika.ico" type="image/x-icon">
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/index.css" />
@@ -31,30 +31,35 @@
 					<li><a href="#">云服务</a></li>
 				</ul>
 				<section>
-					<i class="iconfont">&#xe652;</i>
+					<i class="iconfont iBag">&#xe652;</i>
 					<aside>
+						<em></em>
 						<ul>
-							<li><a href=""><b class="iconfont"><span>购物车</span></b></a></li>
-							<li><a href=""><b class="iconfont"><span>我的订单</span></b></a></li>
-							<li><a href=""><b class="iconfont"><span>回收单</span></b></a></li>
-							<li><a href=""><b class="iconfont"><span>个人中心</span></b></a></li>
-							<li><a href=""><b class="iconfont"><span>登录</span></b></a></li>
+							<li><a href=""><b class="iconfont"></b><span>购物车</span></a></li>
+							<li><a href=""><b class="iconfont"></b><span>我的订单</span></a></li>
+							<li><a href=""><b class="iconfont"></b><span>回收单</span></a></li>
+							<li><a href=""><b class="iconfont"></b><span>个人中心</span></a></li>
+							<li><a href=""><b class="iconfont"></b><span>登录</span></a></li>
 						</ul>
 					</aside>
 				</section>
 			</nav>
 		</header>
+		
+		<!--轮播图-->
 		<div id="banner"></div>
 	</body>
 </html>
 <script src="./font/iconfont.js"></script>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/header.js"></script>
 <script type="text/javascript">
 	window.onload = function(){
+		//轮播图
 		let s1 = new Slider($("#banner"),1440,600,["img/banner1.jpg","img/banner2.jpg","img/banner3.jpg","img/banner4.jpg","img/banner5.jpg","img/banner6.jpg"],
-				10,"0.3","0.7",
-				true,-1,1500);
+				10,"0.4","0.7",
+				true,-1,3000);
 		
 	}
 </script>
