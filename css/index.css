@@ -1,9 +1,20 @@
-#banner{width:100%;height:600px;}
+@media (max-width:1440px) and (min-width: 768px){
+    #banner{height:600px !important;}
+}
+
+@media (max-width: 768px){
+    #banner{height: 520px !important;}
+}
+
+#banner{width:100%;height:770px;}
 
 #banner>ul>li{transition:background 0.3s;}
 #banner>ul>li:hover{opacity:0.5;}
 #banner>div{}
-#banner>div>section{position:absolute;left:750px;top:220px;text-align: center;}
+
+
+/*====================购物袋 ibag==================*/
+#banner>div>section{position:absolute;left:58.5%;top:220px;text-align: center;white-space: nowrap;}
 #banner>div>section h2{margin-bottom:16px;font-size: 2.4rem;line-height: 1;}
 #banner>div>section h3{margin-bottom:16px;font-size: 1.2rem;line-height: 1;font-weight: normal;}
 #banner>div>section a{display:inline-block;margin: 0 15px;border:1px solid transparent;width:124px;height:36px;line-height:36px;border-radius:20px;font-size:16px;}

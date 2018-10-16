@@ -44,7 +44,7 @@ function Slider(
 	];
 	this.isActive = false;
 	
-	this.width = width;
+	this.width = this.$box.width();
 	this.height = height;
 	this.imgs = imgs;//图片数组
 	this.doudouSize = doudouSize;
@@ -76,7 +76,7 @@ Slider.prototype.createUI= function(){
 //		$img.attr("src",this.imgs[i]);
 		$img.css({
 			"position":"absolute",
-			"background":"url("+this.imgs[i]+") 107% center",
+			"background":"url("+this.imgs[i]+") 46.5% center",
 			"background-size":"cover",
 			"top":"0px",
 			width: this.width+"px",	
@@ -173,8 +173,8 @@ Slider.prototype.showImg = function(inOrd,outOrd){
 	this.$imgs.eq(inOrd).css({"left":-this.dir*this.width+"px","z-index":2});
 	this.$imgs.eq(outOrd).css({"z-index":1});
 	
-	let sec_left = 750;
-	this.$sections.eq(inOrd).css({"left":sec_left + -this.dir*this.width/2,"z-index":2,"opacity":0});
+	let sec_left = this.$sections.css("left");
+	this.$sections.eq(inOrd).css({"left":parseInt(sec_left)+this.width*-this.dir,"z-index":2,"opacity":0});
 	this.$sections.eq(outOrd).css({"z-index":1});
 	
 	//2）、滑入滑出效果div
@@ -196,7 +196,7 @@ Slider.prototype.showImg = function(inOrd,outOrd){
 		"opacity":1
 	},this.timeLong);
 	this.$sections.eq(outOrd).delay(200).animate({
-		left:sec_left + this.dir*this.width*0.3
+		left:this.dir*sec_left
 	},this.timeLong);
 	
 	setTimeout(()=>{
@@ -206,7 +206,7 @@ Slider.prototype.showImg = function(inOrd,outOrd){
 }
 
 Slider.prototype.showLi=function(){
-	//    B、改豆豆		
+	//    B、改豆豆
 	this.$lis.eq(this.currOrd)
 	.css({//高亮豆豆
 		"margin-left":-this.liBorder,
@@ -227,7 +227,9 @@ Slider.prototype.showLi=function(){
 	//改变导航栏的字体颜色（class)
 	let color_header = this.colors[this.currOrd].slice(1);
 	//导航栏hover变色 js（因为有banner改色 css的hover失效）
-	$("body>header>nav>ul>li>a,body>header>nav>section>i,svg").css("color",this.colors[this.currOrd]);
+	if(!isHover){
+        $("body>header>nav>ul>li>a,body>header>nav>section>i,svg").css("color",this.colors[this.currOrd]);
+    }
 	$("body>header>nav>ul>li>a,body>header>nav>section>i").hover(
 		function(){
 			$(this).css("opacity",0.6);
@@ -294,6 +296,21 @@ Slider.prototype.addEvent = function(){
 //	this.$box.mouseout(function(){
 //		obj.changeImg();
 //	});
+
+	//当 父盒子改变大小是 更新 轮播图大小
+	$(window).resize(()=>{
+        obj.width = obj.$box.width();
+        obj.height = obj.$box.height();
+        obj.$imgs.css({
+            "width": obj.width,
+			"height": obj.height,
+			"background-size":"cover",
+			"background-position":"46.5% center"
+		});
+        obj.$sections.css({
+            "left": "58.5%"
+		});
+	});
 	
 	this.$lis.click(function(){
 		obj.goImg($(this).index());
@@ -323,3 +340,4 @@ Slider.prototype.addEvent = function(){
 		}
 	);
 }
+
