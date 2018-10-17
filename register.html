@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="icon" href="img/pika.ico" type="image/x-icon">
+		<!--<link rel="stylesheet" href="css/login.css" />-->
+		<link rel="stylesheet" href="css/signIn.css" />
+		
+	</head>
+	<body>
+		<header>
+			<nav class="w">
+				<ul class="l">
+					<li class="l"><a href="index.html">OPPO官网</a></li>
+					<li class="l"><a href="index.html">OPPO社区</a></li>
+					<li class="l"><a href="index.html">ColorOS</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!--头部-->
+		<div class="register_box">
+			<main>
+				<div class="regheader">注册OPPO账号</div>
+				<!--主体注册-->
+				<form class="register_form" action="register.php" method="get">
+					<a class="r text_green" href="login.html">登录</a>
+					
+					<div class="error_tip"></div>
+					<!--<div class="globalcont"></div>-->
+					<div class="error_tip"></div>
+					<div class="input_area">
+						<input type="text" id="mobile" />
+						<label class="placeholder" for="mobile">请输入手机号码</label>
+					</div>
+					<div class="error_tip" id="info_mobile"></div>
+					<div class="input_area">
+						<input type="password" id="password" />
+						<label class="placeholder" for="password">请输入密码</label>
+					</div>
+					<div class="error_tip" id="info_password"></div>
+					<div class="input_area">
+						<input type="password" id="password2" />
+						<label class="placeholder" for="password2">请重复输入密码</label>
+					</div>
+					<div class="error_tip" id="info_password2"></div>
+					<!--复选框-->
+					<div class="feild">
+						<div class="l">
+							<label for="isaccept" id="forCheckBox" class="checkBoxLabel choose"></label>
+							<label id="checkBoxLabel">
+								<span>已阅读并同意</span>
+								<a class="agree_link" target="_blank">《OPPO帐号注册协议》</a>
+							</label>
+						</div>
+					</div>
+					<div class="error_tip"></div>
+					<input class="button green" type="submit" id="registerBtn" value="注册OPPO账号"/>
+					<div class="error_tip1"></div>
+				<!--其他登录方式end-->
+				</form>
+			</main>
+		</div>
+		<!--头部end-->
+	
+		<footer>
+			<p>© 2005 - 2018 OPPO 版权所有 粤ICP备14056724号-2 联系方式：4001-666-888</p>
+		</footer>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	//复选框
+	$("#forCheckBox").click(function(){
+		if($(this).hasClass("choose")){
+			this.classList.remove("choose");
+		}else{
+			this.classList.add("choose");			
+		}
+		
+	});
+	
+	// 获取焦点(点击label)时 label隐藏
+	$(".input_area input").click(function(){
+		$(this).next().css({"display":"none"});
+	})
+	$(".input_area input").blur(function(){
+		//trim 去除 前后空格
+		if($(this).val().trim()==""){
+			$(this).val("");
+			$(this).next().css({"display":"block"});
+		}
+	});
+	
+	// 手机号
+	$("#mobile").blur(function(){
+		if(this.value.length != 11){
+			$("#info_mobile").html("手机号码格式错误")
+		}
+	});
+	
+	//判断两次密码是否一致
+	$("#password").blur(function(){
+		if(this.value.length < 6 || this.value.length>16){
+			$("#info_password").html("请输入长度为6~16位的密码");
+		}
+	});
+	
+	//判断两次密码是否一致
+	$("#password2").blur(function(){
+		if($("#password").val() != this.value){
+			$("#info_password2").html("两次密码不一致，请重新输入");
+		}
+	});
+	
+	
+</script>

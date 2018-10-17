@@ -1,3 +1,84 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, p, a, img, form, input, select, figure, figcaption, ul, li, ol, dl, dt, dd, table, tr, th, td, thead, tbody, tfoot { margin: 0; padding: 0; }
 
+.w { width: 960px; margin: 0 auto; }
+
+.l { float: left; }
+
+.r { float: right; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+ul, ol { list-style-type: none; }
+
+a { color: #333; text-decoration: none; cursor: pointer; -webkit-tap-highlight-color: transparent; background-color: transparent; }
+
+input { outline: none; }
+
+b { font-weight: 100; }
+
+body { font-size: 14px; color: #5d5d5d; background: #fbfbfb; }
+
+header { height: 34px; margin-bottom: 110px; color: #fff; background: #2aad6f; }
+header nav { height: 100%; }
+header nav ul { height: 100%; }
+header nav ul li { height: 100%; border-left: 1px solid #57b488; }
+header nav ul li a { height: 100%; line-height: 34px; color: #fff; padding: 0 20px; display: block; }
+header nav ul li:hover { background: #57b488; }
+
+div.login_box main { width: 320px; margin: 0 auto; text-align: center; /*!其他登录方式*/ }
+div.login_box main .lgnheader { margin-bottom: 45px; }
+div.login_box main .lgnheader h3 { font-weight: normal; }
+div.login_box main div.log_area div.feild { overflow: hidden; margin-top: 10px; }
+div.login_box main div.log_area div.feild a.l { display: none; }
+div.login_box main div.n_links_area { margin-top: 20px; }
+div.login_box main div.n_links_area div.oth_type_links { padding-top: 25px; text-align: center; }
+
+footer { height: 16px; padding: 24px 0; margin-top: 30px; color: #7b7b7b; font-size: 12px; text-align: center; }
+
+div.input_area { position: relative; margin-top: 10px; }
+div.input_area input { width: 286px; height: 20px; line-height: 20px; padding: 12px 16px; border: 1px solid #e2e2e2; display: block; }
+
+.input_area label.placeholder { position: absolute; top: 12px; left: 16px; color: #c5c5c5; }
+
+input.button { width: 100%; height: 46px; background: #fff; line-height: 46px; font-size: 16px; border: 1px solid #e2e2e2; cursor: pointer; }
+
+.logo { width: 205px; height: 34px; background: url("../img/logo.png"); background-size: 100% 100%; margin: 0 auto 20px; }
+
+.error_tip { width: 100%; padding-top: 5px; color: #ff5656; font-size: 12px; }
+
+.error_tip1 { width: 100%; height: 12px; padding-top: 5px; margin-top: 10px; }
+
+.text_green { color: #00925f; text-decoration: underline; font-size: 12px; }
+
+#loginBtn { margin-top: 30px; margin-bottom: 15px; }
+
+input.green { color: #fff; border-color: #2aad6f; background: #2aad6f; }
+
+input.green:hover { border-color: #57b488; background: #57b488; }
+
+.button:hover { background: #e2e2e2; }
+
+.n_links_area div.title { width: 318px; height: 23px; margin: 0 auto; background: url(../img/ico_title.png); }
+
+.other_link { width: 30px; height: 30px; display: inline-block; margin: 0 8px; vertical-align: middle; }
+
+.ico_qq { background: url(../img/ico_qq.jpg) no-repeat; background-size: 100% 100%; }
+
+.ico_wx { background: url(../img/ico_wx.jpg) no-repeat; background-size: 100% 100%; }
+
+/*!注册页*/
+div.register_box { background: #fff; border: 1px solid #e1e1e1; border-radius: 5px; width: 958px; margin: -20px auto 0; }
+div.register_box main div.regheader { height: 110px; line-height: 110px; font-size: 20px; color: #363636; text-align: center; border-bottom: 1px solid #e1e1e1; }
+div.register_box main form.register_form { width: 320px; margin: 0 auto; padding-top: 90px; }
+div.register_box main form.register_form div.feild { overflow: hidden; margin-top: 10px; }
+div.register_box main form.register_form div.feild #checkBoxLabel { font-size: 12px; }
+div.register_box main form.register_form input.button { margin-top: 22px; }
+
+.checkBoxLabel { width: 15px; height: 15px; margin-right: 2px; display: inline-block; background: url(../img/unchecked.jpg); background-size: 15px auto; vertical-align: middle; cursor: pointer; }
+
+.choose { background: url(../img/checked.jpg); background-size: 15px auto; }
+
+.agree_link { color: #00925f; }
 
 /*# sourceMappingURL=signIn.css.map */

@@ -140,7 +140,7 @@
 							<li><a href=""><b class="iconfont">&#xe6db;</b><span>我的订单</span></a></li>
 							<li><a href=""><b class="iconfont">&#xe611;</b><span>回收单</span></a></li>
 							<li><a href=""><b class="iconfont">&#xe653;</b><span>个人中心</span></a></li>
-							<li><a href=""><b class="iconfont">&#xe64c;</b><span>登录</span></a></li>
+							<li><a href="login.html"><b class="iconfont">&#xe64c;</b><span>登录</span></a></li>
 						</ul>
 					</aside>
 				</section>
@@ -282,26 +282,65 @@
 				
 				<!--次推产品层start-->
 				<div class="box2">
+					
+					<!--R15-->
 					<a href="#">
 						<section class="fig">
 							<ul class="imgs">
 								<li><img src="img/box1-1.png" alt="" /></li>
 							</ul>
 							<section class="text">
-								<ul class="fig_text">
-									<li>
-										<h3>Find X 兰博基尼版</h3>
-										<h4>8G+512G，超级闪充。</h4>
-									</li>
-								</ul>
 								<ul class="color-list">
 									<li>
 										<i class="doudou"></i>
 										<i class="border"></i>
 									</li>
 								</ul>
+								<ul class="fig_text">
+									<li>
+										<h3>R15</h3>
+										<h4>4G+128G I 超视野全面屏</h4>
+									</li>
+								</ul>
 								<ul class="ul_prices">
-									<li class="price">￥9999</li>
+									<li class="price">￥2399</li>
+								</ul>
+							</section>
+							
+							<!--<span class="btn">新品</span>-->
+						</section>
+					</a>
+					<!--A7x-->
+					<a href="#">
+						<section class="fig">
+							<ul class="imgs">
+								<li><img src="img/box2-1.png" alt="" /></li>
+								<li><img src="img/box2-2.png" alt="" /></li>
+							</ul>
+							<section class="text">
+								<ul class="color-list">
+									<li>
+										<i class="doudou"></i>
+										<i class="border"></i>
+									</li>
+									<li>
+										<i class="doudou"></i>
+										<i class="border"></i>
+									</li>
+								</ul>
+								<ul class="fig_text">
+									<li>
+										<h3>A7x</h3>
+										<h4>4G+64G | 水滴屏</h4>
+									</li>
+									<li>
+										<h3>A7x</h3>
+										<h4>4G+128G | 水滴屏</h4>
+									</li>
+								</ul>
+								<ul class="ul_prices">
+									<li class="price">￥1799</li>
+									<li class="price">￥1999</li>
 								</ul>
 							</section>
 							
@@ -333,18 +372,91 @@
 		let s1 = new Slider($("#banner"),1440,600,["img/banner1.jpg","img/banner2.jpg","img/banner3.jpg","img/banner4.jpg","img/banner5.jpg","img/banner6.jpg"],
 				10,"0.4","0.7",
 				true,-1,3000);
+		createFig();
+		addEvent();
+	}
+	
+
+let data = {
+	"fig":[
+		{
+			"imgs":["fig1-1.png","fig1-2.png"],
+			"h2":[],
+			"h3":[],
+			"i":[],
+			"price":[],
+			span:"新品"
+		},
+	],
+	"box":[
+	],
+	"acces":[
+	]
+}
+
+function createFig(){
+	let figBox = $("#content>div.w");
+	for(let i in data.fig){
+		console.log(i);
+		//循环到 fig层 i是 fig数组的下标
+		let obj = data.fig[i];
+		
+		let sec_fig = $("<section class='fig'></section>");
+		figBox.append(sec_fig);
+		
+		let ul_imgs = $("<ul class='imgs'></ul>");
+		let sec_text = $("<section clas='text'></section>");
+		let span_btn = $("<span class='btn'></span>");
+		sec_fig.append(ul_imgs,sec_text,span_btn);
+		
+		span_btn.text(obj.span);
+		
+		//ul_imgs 里的 span
+		for(let i in obj.imgs){
+			let li = $("<li></li>");
+			ul_imgs.append(li);
+			
+			let img = $("<img/>");
+			li.append(img);
+			img.attr("src",obj.imgs[i]);
+			
+		}
+		
+		console.log(obj.span);
 		
 	}
+	for(let i in data.box){
+		//循环到 box层
+		
+		
+	}
+	for(let i in data.acces){
+		//循环到 配件层
+		
+		
+	}
+};
+
 //	豆豆点击事件
-	$(".color-list li").click(function(){
+function addEvent(){
+	
+	$(".color-list li").click(function(e){
+		// 阻止浏览器默认行为
+		if(e.preventDefault){
+			e.preventDefault();
+		}else{
+			e.returnValue = false;
+		}
 		let lis = $(this).parent().children();
 		// 其他豆豆 去边框
 		lis.children("i:nth-child(2)").css("opacity","0");
 		// 当前豆豆 加边框
 		$(this).children("i").eq(1).css("opacity","1");
+		// 此处 获取下标 可以用each的回调函数 function（）传参！！！！！！！！！！！！！可改进
 		let index=0;
 		for(let i=0;i<lis.length;i++){
-			if($(lis[i]).is($(this))){
+//			if($(lis[i]).is($(this))){
+			if(lis[i]==this){
 				index = i;
 				break;
 			}
@@ -365,4 +477,6 @@
 		pricelist.css({"opacity":"0","display":"none"});
 		show_price.css({"opacity":"1","display":"block"});
 	});
+	
+}
 </script>

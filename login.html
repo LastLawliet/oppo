@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="icon" href="img/pika.ico" type="image/x-icon">
+		<!--<link rel="stylesheet" href="css/login.css" />-->
+		<link rel="stylesheet" href="css/signIn.css" />
+		
+	</head>
+	<body>
+		<header>
+			<nav class="w">
+				<ul class="l">
+					<li class="l"><a href="index.html">OPPO官网</a></li>
+					<li class="l"><a href="index.html">OPPO社区</a></li>
+					<li class="l"><a href="index.html">ColorOS</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!--头部logo-->
+		<div class="login_box">
+			<main>
+				<div class="lgnheader">
+					<div class="logo"></div>
+					<h3 class="title">登录OPPO帐号可享受更多的服务</h3>
+				</div>
+				<!--主体登录-->
+				<div class="log_area">
+					<div class="error_tip"></div>
+					<div class="input_area">
+						<input type="text" id="username" />
+						<label class="placeholder" for="username">请输入手机号码/邮箱</label>
+					</div>
+					<div class="error_tip"></div>
+					<div class="input_area">
+						<input type="password" id="password" />
+						<label class="placeholder" for="password">请输入密码</label>
+					</div>
+					<div class="error_tip"></div>
+					<div class="feild">
+						<a class="l text_green" href="#">使用邮箱登录</a>
+						<a class="r text_green" href="#">忘记密码</a>
+					</div>
+					<input class="button green" type="button" id="loginBtn" value="登录"/>
+					<input class="button" type="button" id="registerBtn" value="注册OPPO账号"/>
+					<div class="error_tip1"></div>
+				</div>
+				<!--主体登录end-->
+				
+				<!--其他登录方式start-->
+				<div class="n_links_area" id="otherLogin">
+					<div class="title"></div>
+					<div class="oth_type_links">
+						<a class="other_link ico_qq"></a>
+						<a class="other_link ico_wx"></a>
+					</div>
+				</div>
+				<!--其他登录方式end-->
+			</main>
+			<footer>
+				<p>© 2005 - 2018 OPPO 版权所有 粤ICP备14056724号-2 联系方式：4001-666-888</p>
+			</footer>
+		</div>
+		<!--头部end-->
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	// 获取焦点(点击label)时 label隐藏
+	$(".input_area input").click(function(){
+		$(this).next().css({"display":"none"});
+	})
+	$(".input_area input").blur(function(){
+		//trim 去除 前后空格
+		if($(this).val().trim()==""){
+			$(this).val("");
+			$(this).next().css({"display":"block"});
+		}
+	});
+	// 点击注册按钮
+	$("#registerBtn").click(function(){
+		window.location.href="register.html";
+	})
+</script>
