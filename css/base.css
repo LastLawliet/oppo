@@ -9,6 +9,7 @@ html {
 
 .l{float:left;}
 .r{float:right;}
+.w{width:900px;margin:0 auto;}
 
 body {
     font-family: "方正悠黑 508R W", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial;

@@ -150,8 +150,177 @@
 		<!--轮播图-->
 		<div id="banner"></div>
 		
-		<!--站位-->
-		<div style="width:100%;height:800px;"></div>
+		<!--大图-->
+		<div id="content">
+			<div class="w">
+				<!-- OPPO K1 -->
+				<section class="fig">
+					<ul class="imgs">
+						<li><img src="img/fig1-1.png" alt="" /></li>
+						<li><img src="img/fig1-2.png" alt="" /></li>
+					</ul>
+					<section class="text">
+						<ul class="fig_text">
+							<li>
+								<h3>OPPO K1</h3>
+								<h4>6G+64G，前置2500万。</h4>
+							</li>
+							<li>
+								<h3>OPPO K1</h3>
+								<h4>4G+64G，骁龙660。</h4>
+							</li>
+						</ul>
+						<ul class="color-list">
+							<li>
+								<i class="doudou"></i>
+								<i class="border"></i>
+							</li>
+							<li>
+								<i class="doudou"></i>
+								<i class="border"></i>
+							</li>
+						</ul>
+						<ul class="ul_prices">
+							<li class="price">￥1799</li>
+							<li class="price">￥1599</li>
+						</ul>
+						<a href="#">立即购买</a>
+					</section>
+					<span class="btn">新品</span>
+				</section>
+				<!-- OPPO R17 -->
+				<section class="fig">
+					<ul class="imgs">
+						<li><img src="img/fig2-1.png" alt="" /></li>
+						<li><img src="img/fig2-2.png" alt="" /></li>
+						<li><img src="img/fig2-3.png" alt="" /></li>
+					</ul>
+					<section class="text">
+						<ul class="fig_text">
+							<li>
+								<h3>R17</h3>
+								<h4>8G+128G，水滴屏。</h4>
+							</li>
+							<li>
+								<h3>R17</h3>
+								<h4>雾光渐变，8G+128G。</h4>
+							</li>
+							<li>
+								<h3>R17</h3>
+								<h4>水滴屏，6G+12G。</h4>
+							</li>
+						</ul>
+						<ul class="color-list">
+							<li>
+								<i class="doudou"></i>
+								<i class="border"></i>
+							</li>
+							<li>
+								<i class="doudou"></i>
+								<i class="border"></i>
+							</li>
+							<li>
+								<i class="doudou"></i>
+								<i class="border"></i>
+							</li>
+						</ul>
+						<ul class="ul_prices">
+							<li class="price">￥3499</li>
+							<li class="price">￥3599</li>
+							<li class="price">￥3199</li>
+						</ul>
+						<a href="#">立即购买</a>
+					</section>
+					<span class="btn">6期免息</span>
+				</section>
+				<!-- Find X -->
+				<section class="fig">
+					<ul class="imgs">
+						<li><img src="img/fig3-1.png" alt="" /></li>
+						<li><img src="img/fig3-2.png" alt="" /></li>
+						<li><img src="img/fig3-3.png" alt="" /></li>
+					</ul>
+					<section class="text">
+						<ul class="fig_text">
+							<li>
+								<h3>Find X 兰博基尼版</h3>
+								<h4>8G+512G，超级闪充。</h4>
+							</li>
+							<li>
+								<h3>Find X 标准版</h3>
+								<h4>8G+128G ，骁龙 845。</h4>
+							</li>
+							<li>
+								<h3>Find X 超级闪充版</h3>
+								<h4>8G+256G，隐藏摄像头。</h4>
+							</li>
+						</ul>
+						<ul class="color-list">
+							<li>
+								<i class="doudou"></i>
+								<i class="border"></i>
+							</li>
+							<li>
+								<i class="doudou"></i>
+								<i class="border"></i>
+							</li>
+							<li>
+								<i class="doudou"></i>
+								<i class="border"></i>
+							</li>
+						</ul>
+						<ul class="ul_prices">
+							<li class="price">￥9999</li>
+							<li class="price">￥4999</li>
+							<li class="price">￥5999</li>
+						</ul>
+						<a href="#">立即购买</a>
+					</section>
+					<span class="btn">3期免息</span>
+				</section>
+				<!--旗舰产品层end-->
+				
+				<!--次推产品层start-->
+				<div class="box2">
+					<a href="#">
+						<section class="fig">
+							<ul class="imgs">
+								<li><img src="img/box1-1.png" alt="" /></li>
+							</ul>
+							<section class="text">
+								<ul class="fig_text">
+									<li>
+										<h3>Find X 兰博基尼版</h3>
+										<h4>8G+512G，超级闪充。</h4>
+									</li>
+								</ul>
+								<ul class="color-list">
+									<li>
+										<i class="doudou"></i>
+										<i class="border"></i>
+									</li>
+								</ul>
+								<ul class="ul_prices">
+									<li class="price">￥9999</li>
+								</ul>
+							</section>
+							
+							<span class="btn">新品</span>
+						</section>
+					</a>
+				</div>
+				<!--次推产品层end-->
+				
+				
+				<!--配件层start-->
+				<!--配件层end-->
+				
+			</div>
+			<!--div.w-->
+			
+		</div>
+		<!--div.content-->
+		
 	</body>
 </html>
 <script src="./font/iconfont.js"></script>
@@ -166,4 +335,34 @@
 				true,-1,3000);
 		
 	}
+//	豆豆点击事件
+	$(".color-list li").click(function(){
+		let lis = $(this).parent().children();
+		// 其他豆豆 去边框
+		lis.children("i:nth-child(2)").css("opacity","0");
+		// 当前豆豆 加边框
+		$(this).children("i").eq(1).css("opacity","1");
+		let index=0;
+		for(let i=0;i<lis.length;i++){
+			if($(lis[i]).is($(this))){
+				index = i;
+				break;
+			}
+		}
+		//其他图片透明 当前图片显示
+		let imgs = $(this).parents(".fig").find("img");
+		let show_img = imgs.eq(index);
+		imgs.css("opacity","0");
+		show_img.css("opacity","1");
+		// 改标题文本
+		let textlist = $(this).parents(".text").find("ul.fig_text li");
+		let show_text = textlist.eq(index);
+		textlist.css({"opacity":"0","display":"none"});
+		show_text.css({"opacity":"1","display":"block"});
+		// 改价格文本
+		let pricelist = $(this).parents(".text").find("ul.ul_prices li");
+		let show_price = pricelist.eq(index);
+		pricelist.css({"opacity":"0","display":"none"});
+		show_price.css({"opacity":"1","display":"block"});
+	});
 </script>

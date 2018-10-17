@@ -18,3 +18,104 @@
 #banner>div>section h2{margin-bottom:16px;font-size: 2.4rem;line-height: 1;}
 #banner>div>section h3{margin-bottom:16px;font-size: 1.2rem;line-height: 1;font-weight: normal;}
 #banner>div>section a{display:inline-block;margin: 0 15px;border:1px solid transparent;width:124px;height:36px;line-height:36px;border-radius:20px;font-size:16px;}
+
+/*========================content 大长版===============================*/
+#content{padding:42px 0 62px 0;background: #f4f4f4;}
+#content div.w{overflow:hidden;}
+/*===========旗舰产品==========*/
+#content div.w section.fig{float:left;width:894px;height:480px;margin:10px 3px;position:relative;}
+#content div.w section.fig>ul{position:absolute;width:894px;height:480px;background: black;}
+#content div.w section.fig>ul li{height:480px;position:absolute;}
+#content div.w section.fig>ul.imgs li img{width:894px;height:480px;transition:0.5s;}
+#content div.w section.fig>ul.imgs li:not(:first-child) img{opacity: 0;}
+#content div.w section.fig section.text{width:400px;height:480px;position:absolute;
+	padding:110px 0;box-sizing:border-box;text-align: center;color:#fff;}
+/*第二个定位在右侧*/
+#content div.w section.fig:nth-child(2) section.text{right:0;}
+#content div.w section.fig section.text ul.fig_text{width:100%;text-align: center;}
+#content div.w section.fig section.text ul.fig_text li{}
+#content div.w section.fig section.text ul.fig_text li:not(:first-child){opacity:0;display: none;}
+#content div.w section.fig section.text ul.fig_text li h3{}
+#content div.w section.fig section.text ul.fig_text li h3{font-size:1.4rem;line-height:1.4rem;margin-bottom:0.68rem;font-weight: normal;}
+#content div.w section.fig section.text ul.fig_text li h4{font-size:2rem;line-height: 2rem;margin-bottom:1.8rem;}
+
+#content div.w section.fig section.text ul.color-list{text-align: center;width:100%;}
+#content div.w section.fig section.text ul.color-list li{cursor:pointer;width:24px;height:24px;margin:0 5px;overflow:hidden;position:relative;display: inline-block;}
+#content div.w section.fig section.text ul.color-list li i{position: absolute;left:0;top:0;border-radius: 50%;transition:0.3s}
+.doudou{width:14px;height:14px;margin:5px;}
+.border{width:20px;height:20px;background:transparent !important;border-width:2px;border-style:solid;}
+.color-list li:not(:first-child) i:last-child{opacity: 0;}
+
+/* 左上角新品框 */
+.btn{position:absolute;top:40px;left:40px;
+	color:#00c678;width:77px;height:28px;text-align: center;line-height: 28px;border-radius:3px;
+	border:1px solid #00c678;background-color:rgba(0,198,120,0.15);
+}
+
+
+#content div.w section.fig:not(:nth-child(1)) span.btn{color:#f79a47;
+	border:1px solid #f79a47;background-color:rgba(247,154,71,0.15);
+}
+/*=====豆豆======*/
+/*fig1*/
+#content div.w section.fig:nth-child(1) section.text ul.color-list li:nth-child(1) i{
+	background-color: rgb(26, 73, 216); 
+	background-image: linear-gradient(to right bottom, rgb(26, 73, 216), rgb(170, 37, 164));
+	border-color: rgb(85, 77, 255);}
+
+#content div.w section.fig:nth-child(1) section.text ul.color-list li:nth-child(2) i{
+	background-color: rgb(232, 36, 68);
+	background-image: linear-gradient(to right bottom, rgb(232, 36, 68), rgb(41, 0, 6));
+	border-color: rgb(83, 0, 15);}
+
+/*fig2*/
+#content div.w section.fig:nth-child(2) section.text ul.color-list li:nth-child(1) i{
+	background-color: rgb(0, 240, 232);
+	background-image: linear-gradient(to right bottom, rgb(0, 240, 232), rgb(2, 19, 92));
+	border-color: rgb(0, 240, 232);}
+
+#content div.w section.fig:nth-child(2) section.text ul.color-list li:nth-child(2) i{
+	background-color: rgb(194, 69, 239);
+	background-image: linear-gradient(to right bottom, rgb(194, 69, 239), rgb(95, 212, 247));;
+	border-color: rgb(194, 69, 239);}
+
+#content div.w section.fig:nth-child(2) section.text ul.color-list li:nth-child(3) i{
+	background-color: rgb(240, 0, 117); 
+	background-image: linear-gradient(to right bottom, rgb(240, 0, 117), rgb(45, 1, 157));
+	border-color: rgb(240, 0, 117);}
+
+/*fig3*/
+#content div.w section.fig:nth-child(3) section.text ul.color-list li:nth-child(1) i{
+	background-color: rgb(122, 122, 122); 
+	background-image: linear-gradient(to right bottom, rgb(122, 122, 122), rgb(0, 0, 0));
+	border-color: rgb(122, 122, 122);}
+
+#content div.w section.fig:nth-child(3) section.text ul.color-list li:nth-child(2) i{
+	background-color: rgb(12, 8, 14); 
+	background-image: linear-gradient(to right bottom, rgb(12, 8, 14), rgb(226, 28, 125));
+	border-color: rgb(12, 8, 14);}
+
+#content div.w section.fig:nth-child(3) section.text ul.color-list li:nth-child(3) i{
+	background-color: rgb(8, 13, 16); 
+	background-image: linear-gradient(to right bottom, rgb(8, 13, 16), rgb(11, 179, 215));
+	border-color: rgb(8, 13, 16);}
+	
+#content div.w section.fig section.text ul.ul_prices .price{margin-top:3rem;font-size:1.5rem;line-height:1.8rem;}
+#content div.w section.fig section.text ul.ul_prices .price:not(:first-child){opacity:0;display: none;}
+#content div.w section.fig section.text a{display:inline-block;width:148px;height:44px;line-height:44px;
+	color:white;margin-top:16px;
+	border-radius:22px;background-color: #05B570;
+}
+
+
+/*=============box2 次推产品===============*/
+/*该层比旗舰店产品层多一层大div包裹 和a标签 class为 box2*/
+#content div.w div.box2{overflow:hidden;width:914px;margin:-7px;margin-top:1.5rem;background:blueviolet;}
+#content div.w div.box2 section.fig{width:437px;height:580px;margin:10px;}
+#content div.w div.box2 section.fig ul{height:280px;margin:50px 0 40px 0;}
+#content div.w div.box2 section.fig ul li{width:437px;}
+#content div.w div.box2 section.fig ul li img{width:auto;height:100%;}
+
+
+
+/*=============accessory 配件层===============*/
