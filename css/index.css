@@ -40,63 +40,67 @@
 #content div.w section.fig section.text ul.fig_text li h3{font-size:1.4rem;line-height:1.4rem;margin-bottom:0.68rem;font-weight: normal;}
 #content div.w section.fig section.text ul.fig_text li h4{font-size:2rem;line-height: 2rem;margin-bottom:1.8rem;}
 
-#content div.w section.fig section.text ul.color-list{text-align: center;width:100%;}
-#content div.w section.fig section.text ul.color-list li{cursor:pointer;width:24px;height:24px;margin:0 5px;overflow:hidden;position:relative;display: inline-block;}
-#content div.w section.fig section.text ul.color-list li i{position: absolute;left:0;top:0;border-radius: 50%;transition:0.3s}
+#content div.w section.fig section.text ul.color_list{text-align: center;width:100%;}
+#content div.w section.fig section.text ul.color_list li{cursor:pointer;width:24px;height:24px;margin:0 5px;overflow:hidden;position:relative;display: inline-block;}
+#content div.w section.fig section.text ul.color_list li i{position: absolute;left:0;top:0;border-radius: 50%;transition:0.3s}
 .doudou{width:14px;height:14px;margin:5px;}
 .border{width:20px;height:20px;background:transparent !important;border-width:2px;border-style:solid;}
-.color-list li:not(:first-child) i:last-child{opacity: 0;}
+.color_list li:not(:first-child) i:last-child{opacity: 0;}
 
-/* 左上角新品框 */
+/* 左上角新品框 默认是绿色 */
 .btn{position:absolute;top:40px;left:40px;
 	color:#00c678;width:77px;height:28px;text-align: center;line-height: 28px;border-radius:3px;
 	border:1px solid #00c678;background-color:rgba(0,198,120,0.15);
 }
-
-
-#content div.w section.fig:not(:nth-child(1)) span.btn{color:#f79a47;
-	border:1px solid #f79a47;background-color:rgba(247,154,71,0.15);
-}
+/* 绿色 */
+.theme-1{color:#00c678;
+	border:1px solid #00c678;background-color:rgba(0,198,120,0.15);}
+/* 黄色 */
+.theme-2{color:#f79a47;
+	border:1px solid #f79a47;background-color:rgba(247,154,71,0.15);}
+/* 白色 */
+.theme-3{color:#fff;
+	border:1px solid #fff;background-color:rgba(255,255,255,0.15);}
 /*=====豆豆======*/
 /*fig1*/
-#content div.w section.fig:nth-child(1) section.text ul.color-list li:nth-child(1) i{
+#content div.w section.fig:nth-child(1) section.text ul.color_list li:nth-child(1) i{
 	background-color: rgb(26, 73, 216); 
 	background-image: linear-gradient(to right bottom, rgb(26, 73, 216), rgb(170, 37, 164));
 	border-color: rgb(85, 77, 255);}
 
-#content div.w section.fig:nth-child(1) section.text ul.color-list li:nth-child(2) i{
+#content div.w section.fig:nth-child(1) section.text ul.color_list li:nth-child(2) i{
 	background-color: rgb(232, 36, 68);
 	background-image: linear-gradient(to right bottom, rgb(232, 36, 68), rgb(41, 0, 6));
 	border-color: rgb(83, 0, 15);}
 
 /*fig2*/
-#content div.w section.fig:nth-child(2) section.text ul.color-list li:nth-child(1) i{
+#content div.w section.fig:nth-child(2) section.text ul.color_list li:nth-child(1) i{
 	background-color: rgb(0, 240, 232);
 	background-image: linear-gradient(to right bottom, rgb(0, 240, 232), rgb(2, 19, 92));
 	border-color: rgb(0, 240, 232);}
 
-#content div.w section.fig:nth-child(2) section.text ul.color-list li:nth-child(2) i{
+#content div.w section.fig:nth-child(2) section.text ul.color_list li:nth-child(2) i{
 	background-color: rgb(194, 69, 239);
 	background-image: linear-gradient(to right bottom, rgb(194, 69, 239), rgb(95, 212, 247));;
 	border-color: rgb(194, 69, 239);}
 
-#content div.w section.fig:nth-child(2) section.text ul.color-list li:nth-child(3) i{
+#content div.w section.fig:nth-child(2) section.text ul.color_list li:nth-child(3) i{
 	background-color: rgb(240, 0, 117); 
 	background-image: linear-gradient(to right bottom, rgb(240, 0, 117), rgb(45, 1, 157));
 	border-color: rgb(240, 0, 117);}
 
 /*fig3*/
-#content div.w section.fig:nth-child(3) section.text ul.color-list li:nth-child(1) i{
+#content div.w section.fig:nth-child(3) section.text ul.color_list li:nth-child(1) i{
 	background-color: rgb(122, 122, 122); 
 	background-image: linear-gradient(to right bottom, rgb(122, 122, 122), rgb(0, 0, 0));
 	border-color: rgb(122, 122, 122);}
 
-#content div.w section.fig:nth-child(3) section.text ul.color-list li:nth-child(2) i{
+#content div.w section.fig:nth-child(3) section.text ul.color_list li:nth-child(2) i{
 	background-color: rgb(12, 8, 14); 
 	background-image: linear-gradient(to right bottom, rgb(12, 8, 14), rgb(226, 28, 125));
 	border-color: rgb(12, 8, 14);}
 
-#content div.w section.fig:nth-child(3) section.text ul.color-list li:nth-child(3) i{
+#content div.w section.fig:nth-child(3) section.text ul.color_list li:nth-child(3) i{
 	background-color: rgb(8, 13, 16); 
 	background-image: linear-gradient(to right bottom, rgb(8, 13, 16), rgb(11, 179, 215));
 	border-color: rgb(8, 13, 16);}
@@ -109,23 +113,23 @@
 }
 
 
-/*=============box2 次推产品===============*/
-/*该层比旗舰店产品层多一层大div包裹 和a标签 class为 box2*/
-#content div.w div.box2{float:left;width:914px;margin:-7px;margin-top:1.5rem;background:blueviolet;}
-#content div.w div.box2 a {float:left;background:white;width:437px;height:580px;margin:10px;}
-#content div.w div.box2 section.fig{margin:0;width:100%;height:100%;}
-#content div.w div.box2 section.fig>ul{width:100%;height:280px;background:transparent;margin:50px 0 40px 0;position: relative;}
-#content div.w div.box2 section.fig>ul li{text-align: center;}
-#content div.w div.box2 section.fig>ul li img{height:100%;width:auto;}
-#content div.w div.box2 section.fig>section.text{width:100%;color:#000;position:relative;padding:0;}
-#content div.w div.box2 section.fig>section.text ul.color-list{margin-bottom: 26px;}
-#content div.w div.box2 section.fig>section.text ul.fig_text{}
-#content div.w div.box2 section.fig>section.text ul.fig_text li{overflow: hidden;}
-#content div.w div.box2 section.fig>section.text ul.fig_text li h3{font-size:1.6rem;line-height:1.75rem;
+/*=============box 次推产品===============*/
+/*该层比旗舰店产品层多一层大div包裹 和a标签 class为 box*/
+#content div.w div.box{float:left;width:914px;margin:-7px;margin-top:1.5rem;background:blueviolet;}
+#content div.w div.box a {float:left;background:white;width:437px;height:580px;margin:10px;}
+#content div.w div.box section.fig{margin:0;width:100%;height:100%;}
+#content div.w div.box section.fig>ul{width:100%;height:280px;background:transparent;margin:50px 0 40px 0;position: relative;}
+#content div.w div.box section.fig>ul li{text-align: center;}
+#content div.w div.box section.fig>ul li img{height:100%;width:auto;}
+#content div.w div.box section.fig>section.text{width:100%;color:#000;position:relative;padding:0;}
+#content div.w div.box section.fig>section.text ul.color-list{margin-bottom: 26px;}
+#content div.w div.box section.fig>section.text ul.fig_text{}
+#content div.w div.box section.fig>section.text ul.fig_text li{overflow: hidden;}
+#content div.w div.box section.fig>section.text ul.fig_text li h3{font-size:1.6rem;line-height:1.75rem;
 	margin-bottom:0.6rem;font-weight: bold;}
-#content div.w div.box2 section.fig>section.text ul.fig_text li h4{font-size:1rem;line-height:1rem;
+#content div.w div.box section.fig>section.text ul.fig_text li h4{font-size:1rem;line-height:1rem;
 	font-weight: normal;margin-bottom: 1.25rem;}
-#content div.w div.box2 section.fig>section.text ul.ul_prices li{margin-top: 0;font-size:1.4rem;line-height: 1.5rem;}
+#content div.w div.box section.fig>section.text ul.ul_prices li{margin-top: 0;font-size:1.4rem;line-height: 1.5rem;}
 
 
 

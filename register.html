@@ -72,12 +72,12 @@
 <script type="text/javascript">
 	//复选框
 	$("#forCheckBox").click(function(){
-		if($(this).hasClass("choose")){
-			this.classList.remove("choose");
-		}else{
-			this.classList.add("choose");			
-		}
-		
+//		if($(this).hasClass("choose")){
+//			this.classList.remove("choose");
+//		}else{
+//			this.classList.add("choose");			
+//		}
+		$(this).toggleClass("choose");
 	});
 	
 	// 获取焦点(点击label)时 label隐藏
