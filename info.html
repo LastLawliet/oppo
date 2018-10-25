@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>详情页</title>
+	<link rel="stylesheet" href="css/info.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/BigMirror.js"></script>
+	<!--<script type="text/javascript" src="js/cookieTools.js"></script>-->
+</head>
+<body>
+	<!-- 大盒子start-->
+	<div class="product-info">
+		<!-- 左侧 wrap 开始-->
+		<div class="wrap l">
+			<!-- 大图片 start -->
+			<div class="m_box">
+				<i class="scale"></i>
+			</div>
+			<!-- 大图片 end -->
+			
+			<!-- 左侧 下面 start-->
+			<div class="wrap_list">
+				<span class=""></span>
+				<!-- <ul class="icon_m l">
+					<li class="img_hover"><img src="img/01.jpg" alt="" /></li>
+					<li><img src="img/02.jpg" alt="" /></li>
+					<li><img src="img/03.jpg" alt="" /></li>
+					<li><img src="img/04.jpg" alt="" /></li>
+					<li><img src="img/05.jpg" alt="" /></li>
+				</ul> -->
+				<span class="r"></span>
+			</div>
+			<!-- 左侧 下面 end-->
+			
+		</div>
+		<!-- 左侧 wrap 结束-->
+		
+		<!--右侧 itemInfo 开始-->
+		<div class="itemInfo r">
+			<h2 class="iName">Apple iPhone X (A1865) 64GB 银色 移动联通电信4G手机</h2>
+			<div class="news">
+				【购iPhone XS系列享12期白条免息！】全面屏，面容ID，智慧之选，全面绽放。<span>iPhone XR炫彩来袭，10月19日15:01开启预购！</span>
+			</div>
+			
+			<!-- 带背景图 -->
+			<div class="bg">
+				<div class="price_title">
+					<div class="dt l">京 东 价</div>
+					<div class="dd">
+						<span class="p-price">
+							<span>￥</span>
+							<span class="price">7099.00</span>
+						</span>
+						<a href="#" class="jiangjia">降价通知</a>
+					</div>
+				</div>
+				
+				<div class="price_title">
+					<div class="dt l">促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</div>
+					<div class="dd">
+						<b class="red">换购</b>
+						<b class="red">加价购</b>
+						<b class="red">满额返券</b>
+					</div>
+				</div>
+				
+			</div>
+			<!-- 带背景图 -->
+			
+			<!-- 增值业务 -->
+			<div class="price_title">
+				<div class="dt l">增&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;值</div>
+				<div class="dd">
+					<b class="red">换购</b>
+					<b class="red">加价购</b>
+					<b class="red">满额返券</b>
+				</div>
+			</div>
+			<div class="price_title">
+				<div class="dt l">配 送 至</div>
+				<div class="dd">
+					<b class="red">换购</b>
+					<b class="red">加价购</b>
+					<b class="red">满额返券</b>
+				</div>
+			</div>
+			<div class="price_title">
+				<div class="dt l">促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</div>
+				<div class="dd">
+					<b class="red">换购</b>
+					<b class="red">加价购</b>
+					<b class="red">满额返券</b>
+				</div>
+			</div>
+			<div class="buy">
+				<div class="input l">
+					<input type="text" value="1" id="count" />
+					<span class="top">+</span>
+					<span class="bottom">-</span>
+				</div>
+				<a href="shopCar.html" class="btn l" id="add">加入购物车</a>
+				
+			</div>
+		</div>
+		<!--右侧 itemInfo 结束-->
+		
+	</div>
+	<!-- 大盒子end-->
+	
+</body>
+
+</html>
+<script type="text/javascript">
+
+let param_arr = window.location.href.split("?")[1].split("&");
+let param = {};
+for(let i in param_arr){
+	let [key,val] = param_arr[i].split("=");
+	param[key] = val;
+}
+console.log(param);
+
+$.ajax({
+	type:"get",
+	url:"php/getGoodsInfo.php",
+	async:true,
+	data:param,
+	success:function(data){
+		// console.log(data);
+	}
+});
+
+function addEvent_Info(){
+	
+	// 放大镜
+	$(".m_box").mouseenter(function(){
+		singlton.getInstance({
+			//要放大的图片对应的dom元素
+			bigBoxDom:this,
+			//大图的src；要放大的效果的dom元素的背景图片
+			bigImg:$(this).css("background-image"),
+			//要放大图片的宽和高
+			bigBoxWidth:$(this).width(),
+			bigBoxHeight:$(this).height(),
+			//放大镜的宽和高
+			width:305,
+			height:305,
+			multiple:1.5,
+		});
+	});
+	// 小图 hover
+	$(".icon_m").on("mouseenter","li",
+		function(){
+			// 改边框颜色
+			$(this).parent().children("li").removeClass("img_hover");	
+			$(this).addClass("img_hover");
+			
+			// 改 wrap 下的 m_box 的src
+			let imgSrc = $(this).children("img").attr("src");
+			imgSrc = imgSrc.slice(0,4)+imgSrc.slice(5);
+			$(this).parents(".wrap").children(".m_box").css("background-image","url("+imgSrc+")");
+		
+		}
+	);
+	
+	// span 加减 count;
+	$(".input span").click(function(){
+		let count = parseInt($("#count").val()); 
+		if($(this).hasClass("top")){
+			count++;
+		}else if($(this).hasClass("bottom")){
+			count--;
+		}
+		if(count<0){
+			count = 0;
+		}
+		$("#count").val(count);
+		
+	});
+	
+	// 加入购物车
+	$("#add").click(function(e){
+		count = parseInt($("#count").val()); 
+		window.location.href = "shopCar.html?count="+count;
+		e.preventDefault();
+	})
+};
+</script>

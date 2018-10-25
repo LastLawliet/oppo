@@ -155,3 +155,6 @@ header>nav>section aside ul li a{line-height:25px;transition:all 0.3s;}
 header>nav>section aside ul li:hover a{color:rgba(61,61,61,0.5);}
 header>nav>section aside ul li a b{margin: 0 20px 0 10px;font-size:25px;}
 header>nav>section aside ul li a span{font-size:15px;line-height:25px;}
+
+body>header>nav>ul>li>a:hover{opacity:0.6}
+body>header>nav>section>i:hover{opacity:0.6}

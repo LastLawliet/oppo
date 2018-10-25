@@ -228,18 +228,13 @@ Slider.prototype.showLi=function(){
 	let color_header = this.colors[this.currOrd].slice(1);
 	//导航栏hover变色 js（因为有banner改色 css的hover失效）
 	if(!isHover){
-        $("body>header>nav>ul>li>a,body>header>nav>section>i,svg").css("color",this.colors[this.currOrd]);
+        changeColor_nav.apply(this);
     }
-	$("body>header>nav>ul>li>a,body>header>nav>section>i").hover(
-		function(){
-			$(this).css("opacity",0.6);
-		},
-		function(){
-			$(this).css("opacity","");
-		}
-	);
-}
 
+}
+function changeColor_nav(){
+	$("body>header>nav>ul>li>a,body>header>nav>section>i,svg").css("color",this.colors[this.currOrd]);
+}
 //1、自动播放图片
 Slider.prototype.changeImg=function(){
 	if(this.myTimer){return};

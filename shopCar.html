@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车详情页</title>
+		<link rel="stylesheet" href="css/shopCar.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/checkAll_UnCheck.js"></script>
+		<!--<script type="text/javascript" src="js/cookieTools.js"></script>-->
+	</head>
+	<body>
+		<main>
+			<!-- header -->
+			<div class="header">
+				<div class="total l">全部商品 <span id='total'>2</span></div>
+				<span class="l">京东大药房</span>
+				<div class="r">
+					<span>配送至:</span>
+					<select name="address">
+						<option value="北京朝阳区三环以内" selected="">北京朝阳区三环以内</option>
+					</select>
+				</div>
+			</div>
+			<!-- header -->
+			
+			<!--title -->
+			<div class="title">
+				<div class="col-1">
+					<input type="checkbox" id="select_all" />
+					<label for="select_all">全选</label>
+				</div>
+				<div class="col-2">商品</div>
+				<div class="col-3">详情</div>
+				<div class="col-4">单价</div>
+				<div class="col-5">数量</div>
+				<div class="col-6">小计</div>
+				<div class="col-7">操作</div>
+			</div>
+			<!-- title -->
+			
+			<section class="main">
+				<div class="content_title">
+					<div class="l">
+						<input type="checkbox" id="ziying" checked />
+						<label for="ziying">京东自营</label>
+					</div>
+					<div class="r">已免运费</div>
+				</div>
+				
+				<!-- 购物车列表 -->
+				<ul class="list">
+					<li class="goods">
+						<div class="col-1">
+							<input type="checkbox" class="good" />
+						</div>
+						<div class="col-2">
+							<img class='img' src='img/1.jpg'/>
+						</div>
+						<div class='col-3'>
+							<h2>Apple iPhone X (A1865) 64GB 银色 移动联通电信4G手机</h2>
+						</div>
+						<div class="col-4">
+							<span>￥ <i>7099.00</i></span>
+						</div>
+						<div class="col-5">
+							<i class='jian'>-</i>
+							<span>1</span>
+							<i class='jia'>+</i>
+						</div>
+						<div class="col-6">
+							<span class="sum">7099.00</span>
+						</div>
+						<div class="col-7">
+							<a>删除</a>
+						</div>
+					</li>
+					<li class="goods">
+						<div class="col-1">
+							<input type="checkbox" class="good" />
+						</div>
+						<div class="col-2">
+							<img class='img' src='img/1.jpg'/>
+						</div>
+						<div class='col-3'>
+							<h2>Apple iPhone X (A1865) 64GB 银色 移动联通电信4G手机</h2>
+						</div>
+						<div class="col-4">
+							<span>￥ <i>7099.00</i></span>
+						</div>
+						<div class="col-5">
+							<i class='jian'>-</i>
+							<span>1</span>
+							<i class='jia'>+</i>
+						</div>
+						<div class="col-6">
+							<span class="sum">7099.00</span>
+						</div>
+						<div class="col-7">
+							<a>删除</a>
+						</div>
+					</li>
+				</ul>
+				<div class="total_box">
+					小计：￥ <span class="total_num">14198</span>.00
+				</div>
+			</section>
+			
+		</main>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var str = document.URL.split("?")[1]
+	if(str){
+		console.log(str);
+		let count = parseInt(str.split("&")[0].split("=")[1])
+		console.log(count);
+	}
+	console.log(str);
+//	let message = {};
+//	for(let i in key_val){
+//		arr = key_val[i].split("=");
+//		message[arr[0]] = arr[1];
+//	}
+
+	$(".col-5 i").click(function(){
+		// 改数据
+		let count = parseInt($(this).parent().children("span").text());
+		let dir = 0;
+		if($(this).hasClass("jia")){
+			dir = 1;
+		}else if($(this).hasClass("jian")){
+			// 边界判断
+			if(count<=0){
+				return;
+			}
+			dir = -1;
+		}
+		count += dir;
+		// 改外观
+		$(this).parent().children("span").text(count);
+		// 改行价格
+		let price = parseFloat($(this).parents("li.goods").find(".col-4 i").text());
+		let $sum = $(this).parent().next().children();
+		changeNum($sum,dir*price);
+		// 改总价格
+		changeNum($(".total_num"),dir*price);
+		// 改数量
+		changeNum($("#total"),dir)
+	});
+	
+	// 删除按钮
+	$(".col-7 a").click(function(e){
+//		e.preventDefault();
+		// 改 total_num
+		let sum = $(this).parents(".goods").find(".sum").text();
+		let num_count = $(this).parents(".goods").find(".col-5 span").text();
+		sum = parseFloat(sum);
+		num_count = parseFloat(num_count);
+		changeNum($(".total_num"),-sum);
+		changeNum($("#total"),-num_count);
+		// 隐藏 并删除数据
+		let li = $(this).parents(".goods").hide("slow");
+		setTimeout(()=>{
+//			let li = $(this).parents(".goods")[0].outerHTML = "";
+			$(this).parents(".goods").remove();
+		},1000);
+	});
+	
+	function changeNum($box,num){
+		let sum = parseFloat($box.text());
+		sum += num;
+		$box.text(sum);
+	}
+	
+	// 全选按钮
+	$("#select_all").bindCheck($(".list :checkbox"));
+
+</script>
